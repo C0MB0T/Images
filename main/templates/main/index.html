@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo - BlaBla.Ru</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Наборы фотографий</h1>
+
+        {% for i in m %}
+        <div class="car">
+            <h2>Такой вот набор</h2>
+            <div class="ca">
+                {% for g in i.imgs.all %}
+                    <img src="{{g.img.url}}" alt="">
+                {% endfor %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
